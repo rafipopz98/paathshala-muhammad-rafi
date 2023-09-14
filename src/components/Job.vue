@@ -42,9 +42,8 @@ import axios from 'axios'
     }, 
     
     methods: {
-     
-  async submitForm() {
     
+  async submitForm() {
     console.log(this.formData)
     axios.post("http://localhost:3000/post", this.formData).then((res)=>{
         console.log(res.data)

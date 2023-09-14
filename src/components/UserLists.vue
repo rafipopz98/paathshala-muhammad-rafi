@@ -23,17 +23,11 @@ export default {
   data(){
     return{
         user:[],
-        dataLoaded:false,
-        showToast:false,
-        toastMessage:"",
     }
   },
   methods: {
     showUserDetails(user) {
       this.$emit('show-details', user);
-    },
-    loadData(){
-        
     },
   },
 };

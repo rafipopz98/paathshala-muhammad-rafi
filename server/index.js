@@ -15,9 +15,8 @@ app.use(
 );
 
 app.use("/", jobRoutes);
-// port on which the server listens
 const port = 3000;
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+  console.log( `Listening on port ${port}`);
 });

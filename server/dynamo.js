@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const AWS = require("aws-sdk");
+const {accesskey,secretKey} =require("./key")
 
 router.get("/all", async (req, res) => {
   try {
     AWS.config.update({
-      accessKeyId: "AKIASBOXW2FZUCJMVKYG",
-      secretAccessKey: "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",
+      accessKeyId: accesskey,
+      secretAccessKey: secretKey,
       region: "us-east-1",
     });
 
@@ -42,8 +43,8 @@ router.post("/post", async (req, res) => {
   try {
     console.log("req.body", req.body);
     AWS.config.update({
-      accessKeyId: "AKIASBOXW2FZUCJMVKYG",
-      secretAccessKey: "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",
+      accessKeyId: accesskey,
+      secretAccessKey:secretKey,
       region: "us-east-1",
     });
     const date = Date.now();
