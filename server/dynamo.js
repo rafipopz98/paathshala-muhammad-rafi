@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const AWS = require("aws-sdk");
-const {accesskey,secretKey} =require("./key")
+// const {accesskey,secretKey} =require("./key")
 
 router.get("/all", async (req, res) => {
   try {
     AWS.config.update({
-      accessKeyId: accesskey,
-      secretAccessKey: secretKey,
+      accessKeyId: "AKIASBOXW2FZUCJMVKYG",
+      secretAccessKey: "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",
       region: "us-east-1",
     });
 
@@ -18,7 +18,7 @@ router.get("/all", async (req, res) => {
     };
     docClient.scan(params, function (err, data) {
       if (err) {
-        console.log(err);
+        // console.log(err);
         res.send({
           success: false,
           data: null,
@@ -43,8 +43,8 @@ router.post("/post", async (req, res) => {
   try {
     console.log("req.body", req.body);
     AWS.config.update({
-      accessKeyId: accesskey,
-      secretAccessKey:secretKey,
+      accessKeyId: "AKIASBOXW2FZUCJMVKYG",
+      secretAccessKey:"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",
       region: "us-east-1",
     });
     const date = Date.now();
@@ -76,3 +76,5 @@ router.post("/post", async (req, res) => {
 });
 
 module.exports = router;
+
+// https://youtu.be/40a-UfaJX4Y

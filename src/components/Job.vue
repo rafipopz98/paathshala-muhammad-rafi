@@ -48,7 +48,6 @@ import axios from 'axios'
     axios.post("http://localhost:3000/post", this.formData).then((res)=>{
         console.log(res.data)
         const ans=res.data;
-        
     })
   }
 },
