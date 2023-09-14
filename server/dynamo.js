@@ -5,8 +5,8 @@ const AWS = require("aws-sdk");
 router.get("/all", async (req, res) => {
   try {
     AWS.config.update({
-      accessKeyId: "AKIASBOXW2FZYTZUX55D",
-      secretAccessKey: "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",
+      accessKeyId: "AKIASBOXW2FZUCJMVKYG",
+      secretAccessKey: "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",
       region: "us-east-1",
     });
 
@@ -42,8 +42,8 @@ router.post("/post", async (req, res) => {
   try {
     console.log("req.body", req.body);
     AWS.config.update({
-      accessKeyId: "AKIASBOXW2FZYTZUX55D",
-      secretAccessKey: "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",
+      accessKeyId: "AKIASBOXW2FZUCJMVKYG",
+      secretAccessKey: "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",
       region: "us-east-1",
     });
     const date = Date.now();
@@ -54,6 +54,7 @@ router.post("/post", async (req, res) => {
     };
     docClient.put(params, function (err, data) {
       if (err) {
+        log
         res.send({
           success: false,
           data: null,

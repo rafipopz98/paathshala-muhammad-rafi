@@ -1,6 +1,7 @@
 <template id="alll">
   <h1 style="color: aliceblue; padding: 10px;">User details</h1>
-  <div class="user-list">
+  
+  <div  class="user-list">
     <div v-for="user in userList" :key="user.id" @click="showUserDetails(user)">
       <div class="user-card">
         <h1>{{ user.name }}</h1>
@@ -8,6 +9,9 @@
       </div>
     </div>
   </div>
+
+
+<div id="toast" v-if="showToast"> {{ toastMessage }}</div>
 </template>
 
 <script>
@@ -19,11 +23,17 @@ export default {
   data(){
     return{
         user:[],
+        dataLoaded:false,
+        showToast:false,
+        toastMessage:"",
     }
   },
   methods: {
     showUserDetails(user) {
       this.$emit('show-details', user);
+    },
+    loadData(){
+        
     },
   },
 };

@@ -6,6 +6,7 @@ import axios from 'axios'
   <div class="background-container">
     <form @submit.prevent="submitForm" action="POST">
       <h1  style="text-align:  center; padding: 5px; background-color: #333; color: #d3d3d3; font-weight: 600;font-size: 30px;font-family: Arial, Helvetica, sans-serif;">Job Application Form</h1>
+      
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="formData.name"  />
   
@@ -38,15 +39,17 @@ import axios from 'axios'
           jobTitle: '',
         },
       };
-    },
+    }, 
     
     methods: {
      
   async submitForm() {
+    
     console.log(this.formData)
     axios.post("http://localhost:3000/post", this.formData).then((res)=>{
         console.log(res.data)
         const ans=res.data;
+        
     })
   }
 },
