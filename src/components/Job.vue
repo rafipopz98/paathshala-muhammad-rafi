@@ -5,7 +5,7 @@ import axios from 'axios'
 <template> 
   <div class="background-container">
     <form @submit.prevent="submitForm" action="POST">
-      <h1 style="text-align: center;color: #d3d3d3; font-weight: 600;font-size: 30px;font-family: Arial, Helvetica, sans-serif;">Job Application Form</h1>
+      <h1  style="text-align:  center; padding: 5px; background-color: #333; color: #d3d3d3; font-weight: 600;font-size: 30px;font-family: Arial, Helvetica, sans-serif;">Job Application Form</h1>
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="formData.name"  />
   
@@ -22,7 +22,6 @@ import axios from 'axios'
   <div class="allbuttons">
 
     <button type="submit">Submit</button>
-    <button>View ALL Records</button>
 
   </div>
     </form>
@@ -57,7 +56,8 @@ import axios from 'axios'
    <style scoped>
 
    .background-container {
-     background-image: url('https://wallpaperaccess.com/full/2994980.jpg');
+     /* background-image: url('https://wallpaperaccess.com/full/2994980.jpg'); */
+     background-color: #333;
      background-size: cover;
      background-repeat: no-repeat;
      min-height: 100vh;
@@ -68,10 +68,10 @@ import axios from 'axios'
    }
    
      form {
-       background: rgba(88, 87, 87, 0.15); /* Adjust the opacity as needed */
+       background: rgba(88, 87, 87, 0.15); 
      border-radius: 10px;
      padding: 50px;
-     backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+     backdrop-filter: blur(10px); 
      box-shadow: 2px 4px 8px rgba(170, 169, 169, 0.1);
      max-width: 400px;
    
@@ -85,12 +85,15 @@ import axios from 'axios'
    h2 {
      text-align: center;
      font-size: 24px;
+     background-color: #333;
      margin-bottom: 20px;
      color: #dd5656;
    }
    
    label {
      font-weight: bold;
+     /* background-color: #111; */
+     color: #fff;
      font-family: Arial, Helvetica, sans-serif;
    }
    

@@ -56,6 +56,7 @@ button:hover {
 
 
 <script>
+import axios from 'axios'
 
 export default {
   components: {
@@ -69,7 +70,7 @@ export default {
       id: 1,
       name: 'John Doe',
       email: 'john@example.com',
-      phoneNumber: '123-456-7890',
+      number: '123-456-7890',
       jobTitle: 'Software Engineer',
     },  
       ],
@@ -79,11 +80,24 @@ export default {
   methods: {
     showDetails(user) {
       this.selectedUser = user;
+      axios.get("http://localhost:3000/all").then(res=>{
+        this.users=res.data.data;
+        console.log(this.users)
+      })
     },
     closeDetails() {
       this.selectedUser = null;
     },
+    fetchUsers(){
+      axios.get("http://localhost:3000/all").then(res=>{
+        this.users=res.data.data;
+        console.log(this.users)
+      })
+    }
   },
+  mounted(){
+    this.fetchUsers()
+  }
 };
 </script>
 

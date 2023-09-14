@@ -1,5 +1,5 @@
-<template>
-  <h1>User details</h1>
+<template id="alll">
+  <h1 style="color: aliceblue; padding: 10px;">User details</h1>
   <div class="user-list">
     <div v-for="user in userList" :key="user.id" @click="showUserDetails(user)">
       <div class="user-card">
@@ -24,10 +24,6 @@ export default {
   methods: {
     showUserDetails(user) {
       this.$emit('show-details', user);
-      axios.get("http://localhost:3000/all").then(res=>{
-        this.items=res.data;
-        console.log(this.items)
-      })
     },
   },
 };
@@ -35,6 +31,7 @@ export default {
 
 <style scoped>
 .user-list {
+    padding: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -45,7 +42,7 @@ h1{
   text-align: center;
 }
 .user-card {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 5px;

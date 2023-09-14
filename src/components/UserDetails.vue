@@ -4,7 +4,7 @@
         <div class="modal-content">
           <h1>{{ user.name }}</h1>
           <h4>{{ user.email }}</h4>
-          <p>{{ user.phoneNumber }}</p>
+          <p>{{ user.number }}</p>
           <p>{{ user.jobTitle }}</p>
           <button @click="closeUserDetails">X</button>
         </div>
@@ -23,3 +23,11 @@
   };
   </script>
   
+  <style scoped>
+  .modal-content{
+    gap: 20px;
+  }
+  h1,h4,p,button{
+    padding: 5px;
+  }
+</style>
